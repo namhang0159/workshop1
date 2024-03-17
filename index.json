@@ -1,0 +1,50 @@
+[
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "RDS stands for Amazon Relational Database Service and is a web service that allows you to easily set up, operate, and scale relational databases on AWS Cloud.\nAmazon RDS will take care of the difficult or management tasks:\nYou can allocate CPU, IOPS or storage in a custom way RDS uses AWS backup service for data backup, automatic error detection and recovery Accessing RDS instances via shell is not supported You can automatically or manually backup Snapshot High self-synchronization ability between primary and secondary Control access to RDS through IAM, protect the database by pushing it to virtual private cloud\nA database is a systematic collection of data, stored electronically. It can contain any type of data, including words, numbers, images, videos, and files. You can use software called a database management system (DBMS) to store, export, and edit data. In system computers, a database can also refer to any DBMS, to the system database or an application link to the database.\n"
+},
+{
+	"uri": "/2-create-rds/",
+	"title": "Create RDS",
+	"tags": [],
+	"description": "",
+	"content": "Create RDS Database Instance\n1.Access the RDS interface.\n2.Choose Database.\nClick on Create database. 3.Follow these steps to create a database:\nSelect Engine: MySQL.\nChoose Free tier. 4.Settings\n-DB instance identifier:mydatabaseinstance\n-Master username:mydatabaseuser\n-Master password and Confirm password : mydatabasepassword\n5.Instance configuration\n-Choose db.t2.micro 6.Conectivity\n-Virtual Private Cloud (VPC): default VPC -Subnet group: default\n-Public accessibility: Choose Yes\n-VPC security groups: Choose Create new VPC security group 7.Database Options:\n-Database name: mydatabase -Disabled backup. Monitoring\n-Auto minor version upgrade : Disable\nCLICK Create database Wait until the status change to Availble.\nClick on the database you created,click the VPC Security groups.\nChoose the Inbound Rules and click on Edit Inbound Rules.\nRemove the source of IP address and select Anywhere (0.0.0.0/0) and click on Save rules.\nRemember the master user and password. Save the endpoint and port of the database you just created\n"
+},
+{
+	"uri": "/3-test-rds/",
+	"title": "Test RDS",
+	"tags": [],
+	"description": "",
+	"content": "In this section we will test database using MySQL Workbench. 1.Open MySQL Workbench. Click on the plus icon on the right of MySQL Connections.\n2.Connection Name: Enter a sample name like RDS Connection\nHost Name: Enter your endpoint → e.g, mydatabaseinstance.cjtisfsluhnr.us-east-1.rds.amazonaws.com\nPort: 3306\nUsername: mydatabaseuser\nPassword: Click on Store in keychain and enter password mydatabasepassword.\nClick on Test Connection to make sure that you are able to connect to the database properly.\nClick on OK and OK again to save the connection.\n3.Enter the database You have successfully used AWS management console to create RDS MySQL database instance.\n"
+},
+{
+	"uri": "/4-clean-up/",
+	"title": "Clean up",
+	"tags": [],
+	"description": "",
+	"content": "Access the RDS interface.\nChoose Database.\nDelete the newly created database.\nChoose Subnet groups, Delete the subnet group related to the lab.\n"
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/",
+	"title": "Use RDS on AWS",
+	"tags": [],
+	"description": "",
+	"content": "Use RDS on AWS This lab walks you through to the creation and testing of an Amazon Relational Database Service (Amazon RDS) database. We will create an RDS MySql Database and test the connection using MySQL Workbench.\n"
+}]

@@ -1,0 +1,50 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "RDS là viết tắt của Amazon Relational Database Service là một web service cho phép bạn dễ dàng setup thao tác, scale cơ sở dữ liệu quan hệ trên AWS Cloud.\nAmazon RDS sẽ đảm nhận các tác vụ khó hay các tác vụ quản lý:\nBạn có thể phân bổ CPU, IOPS hay storage một cách tuỳ biến\nRDS sử dụng AWS backup service cho việc backup data, tự động phát hiện lỗi và recovery\nKhông support việc access RDS instance thông qua shell\nBạn có thể backup tự động hay thủ công Snapshot\nKhả năng tự đồng bộ cao giữa primary và secondary\nKiểm soát được việc access vào RDS thông qua IAM, bảo vệ database bằng cách đẩy lên virtual private cloud\nCơ sở dữ liệu là một bộ sưu tập dữ liệu có hệ thống, được lưu trữ bằng điện tử. Nó có thể chứa bất kỳ loại dữ liệu nào, bao gồm từ, số, hình ảnh, video và tệp. Bạn có thể sử dụng phần mềm được gọi là cơ sở dữ liệu quản lý hệ thống (DBMS) để lưu trữ, xuất và chỉnh sửa dữ liệu. Trong các máy tính hệ thống, cơ sở dữ liệu cũng có thể tham khảo bất kỳ DBMS nào, đến cơ sở dữ liệu hệ thống hoặc một liên kết ứng dụng với cơ sở dữ liệu.\n"
+},
+{
+	"uri": "/vi/2-create-rds/",
+	"title": "Tạo RDS",
+	"tags": [],
+	"description": "",
+	"content": "Tạo phiên bản cơ sở dữ liệu RDS\n1.Truy cập giao diện RDS.\n2.Chọn Database.\nClick vào Create database. 3.Thực hiện theo các bước sau để tạo cơ sở dữ liệu:\nChọn Động cơ: MySQL.\nChọn Bậc miễn phí.\n4.Cài đặt\n-Mã định danh phiên bản DB:mydatabaseinstance\n-Tên người dùng chính:mydatabaseuser\n-Mật khẩu chính và Xác nhận mật khẩu : mydatabasepassword\n5.Cấu hình sơ thẩm\n-Chọn db.t2.micro 6.Kết nối\n-Virtual Private Cloud (VPC): VPC mặc định -Nhóm mạng con: mặc định\n-Khả năng tiếp cận công cộng:Chọn Yes\n-Nhóm bảo mật VPC: Chọn Create new VPC security group 7.Tùy chọn cơ sở dữ liệu:\n-Database name: mydatabase -Disabled backup. Giám sát\n-Auto minor version upgrade : Disable\nCLICK Create database Đợi cho đến khi trạng thái thay đổi thành Availble.\nNhấp vào cơ sở dữ liệu bạn đã tạo, nhấp vào nhóm VPC Security.\nChọn Quy tắc gửi đến và nhấp vào Edit Inbound Rules.\nXóa nguồn địa chỉ IP và chọn Anywhere (0.0.0.0/0) và nhấp vàoSave rules.\nGhi nhớ người dùng chính và mật khẩu. Lưu điểm cuối và cổng của cơ sở dữ liệu bạn vừa tạo\n"
+},
+{
+	"uri": "/vi/3-test-rds/",
+	"title": "Chạy thử RDS",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, chúng ta sẽ kiểm tra cơ sở dữ liệu bằng cách sử dụng MySQL Workbench.\n1.Mở Bàn làm việc MySQL. Nhấp vào biểu tượng dấu cộng ở bên phải Kết nối MySQL.\nTên kết nối: Nhập tên mẫu như RDS Connection\nTên máy chủ: Nhập điểm cuối của bạn → ví dụ: mydatabaseinstance.cjtisfsluhnr.us-east-1.rds.amazonaws.com\nPort: 3306\nTên tài khoản: mydatabaseuser\nMật khẩu: Nhấp vào Lưu trữ trong móc khóa và nhập mật khẩu mydatabasepassword.\nBấm vào Kiểm tra kết nối để đảm bảo rằng bạn có thể kết nối với cơ sở dữ liệu đúng cách.\nBấm vào OK và OK lần nữa để lưu kết nối.\n3.Vào cơ sở dữ liệu\nBạn đã sử dụng thành công bảng điều khiển quản lý AWS để tạo phiên bản cơ sở dữ liệu RDS MySQL.\n"
+},
+{
+	"uri": "/vi/4-clean-up/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập giao diện RDS.\nChọn Cơ sở dữ liệu.\nXóa cơ sở dữ liệu mới tạo.\nChọn Nhóm mạng con, Xóa nhóm mạng con liên quan đến lab.\n"
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/",
+	"title": "Siuu",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng RDS trên AWS Thí nghiệm này sẽ hướng dẫn bạn cách tạo và thử nghiệm cơ sở dữ liệu Dịch vụ cơ sở dữ liệu quan hệ của Amazon (Amazon RDS). Chúng tôi sẽ tạo RDS MySql Database và kiểm tra kết nối bằng MySQL Workbench.\n"
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
